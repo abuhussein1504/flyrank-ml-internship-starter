@@ -1,0 +1,19 @@
+{
+  "k": 50,
+  "base_rate": 0.564,
+  "precision_at_k": {
+    "week4_baseline_rule": 0.44,
+    "logistic_regression": 0.72,
+    "random_forest": 0.52
+  },
+  "leakage_check": {
+    "suspect_columns": [
+      "impressions_last_30d",
+      "impressions_prev_30d"
+    ],
+    "precision_at_k_with_leak": 1.0,
+    "precision_at_k_without_leak": 0.72,
+    "reason": "corr((last-prev)/prev, trend_pct) = 0.99999998 -- source columns of the label"
+  },
+  "top50_wrong_picks_logreg": 14
+}
