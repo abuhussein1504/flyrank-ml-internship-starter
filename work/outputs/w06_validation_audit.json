@@ -1,0 +1,24 @@
+{
+  "k": 50,
+  "base_rate": 0.564,
+  "precision_at_k": {
+    "week4_baseline_rule": 0.44,
+    "logistic_regression_grouped_honest": 0.72,
+    "logistic_regression_naive_random_split": 0.86
+  },
+  "leak_detector_sanity_check": {
+    "precision_at_k_with_injected_trend_pct": 1.0,
+    "note": "confirms the leakage test is sensitive; trend_pct is NOT a real feature, it's the label source"
+  },
+  "claim_language": [
+    "observed",
+    "measured",
+    "directional",
+    "decision-support"
+  ],
+  "not_claimed": [
+    "causation",
+    "guaranteed per-client benefit",
+    "forward-in-time performance"
+  ]
+}
