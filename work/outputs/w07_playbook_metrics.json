@@ -3,15 +3,15 @@
   "base_rate": 0.564,
   "precision_at_k": {
     "week4_baseline_rule": 0.44,
-    "logistic_regression_grouped_honest": 0.72
+    "logistic_regression_grouped_honest": 0.74
   },
   "eligible_population": 28795,
   "distinct_clients": 31,
   "action_mix": {
-    "monitor": 16283,
-    "investigate_quiet_risk": 3997,
-    "refresh_review_routine": 3747,
-    "refresh_priority_review": 2754,
+    "monitor": 16291,
+    "investigate_quiet_risk": 3989,
+    "refresh_review_routine": 3740,
+    "refresh_priority_review": 2761,
     "monitor_not_owned": 1366,
     "monitor_too_new": 478,
     "verify_before_action": 170
@@ -36,12 +36,12 @@
       "verify_before_action": 0
     },
     "keyword article": {
-      "investigate_quiet_risk": 3786,
-      "monitor": 15799,
+      "investigate_quiet_risk": 3778,
+      "monitor": 15807,
       "monitor_not_owned": 0,
       "monitor_too_new": 478,
-      "refresh_priority_review": 2754,
-      "refresh_review_routine": 3747,
+      "refresh_priority_review": 2761,
+      "refresh_review_routine": 3740,
       "verify_before_action": 168
     }
   },
@@ -53,7 +53,7 @@
   "retrospective_weak_pick_rate": {
     "note": "trend_direction used ONLY here, as a retrospective audit of this snapshot -- never a live decision input",
     "refresh_priority_review": 0.299,
-    "investigate_quiet_risk": 0.245
+    "investigate_quiet_risk": 0.244
   },
   "monitoring_policy": {
     "pre_release_checks": [
