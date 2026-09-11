@@ -1,0 +1,76 @@
+{
+  "k": 50,
+  "base_rate": 0.564,
+  "precision_at_k": {
+    "week4_baseline_rule": 0.44,
+    "logistic_regression_grouped_honest": 0.72
+  },
+  "eligible_population": 28795,
+  "distinct_clients": 31,
+  "action_mix": {
+    "monitor": 16283,
+    "investigate_quiet_risk": 3997,
+    "refresh_review_routine": 3747,
+    "refresh_priority_review": 2754,
+    "monitor_not_owned": 1366,
+    "monitor_too_new": 478,
+    "verify_before_action": 170
+  },
+  "archetype_action_counts": {
+    "comparison article": {
+      "investigate_quiet_risk": 211,
+      "monitor": 484,
+      "monitor_not_owned": 0,
+      "monitor_too_new": 0,
+      "refresh_priority_review": 0,
+      "refresh_review_routine": 0,
+      "verify_before_action": 2
+    },
+    "feedly article": {
+      "investigate_quiet_risk": 0,
+      "monitor": 0,
+      "monitor_not_owned": 1366,
+      "monitor_too_new": 0,
+      "refresh_priority_review": 0,
+      "refresh_review_routine": 0,
+      "verify_before_action": 0
+    },
+    "keyword article": {
+      "investigate_quiet_risk": 3786,
+      "monitor": 15799,
+      "monitor_not_owned": 0,
+      "monitor_too_new": 478,
+      "refresh_priority_review": 2754,
+      "refresh_review_routine": 3747,
+      "verify_before_action": 168
+    }
+  },
+  "no_go_counts": {
+    "syndicated_not_owned": 1366,
+    "too_new_unstable": 486,
+    "needs_verification_before_trusting": 194
+  },
+  "retrospective_weak_pick_rate": {
+    "note": "trend_direction used ONLY here, as a retrospective audit of this snapshot -- never a live decision input",
+    "refresh_priority_review": 0.299,
+    "investigate_quiet_risk": 0.245
+  },
+  "monitoring_policy": {
+    "pre_release_checks": [
+      "population_size",
+      "eligible_share",
+      "feature_distribution_snapshot"
+    ],
+    "post_label_checks": [
+      "base_rate_recompute",
+      "precision_at_k_recompute_vs_rule_and_model"
+    ],
+    "fallback_rule": "if model precision@50 < rule precision@50 for 2 consecutive labeled periods, revert to the frozen rule and escalate for retraining review",
+    "status": "proposed policy, not yet executed -- starter CSV is a single snapshot with no second labeled period to test it against"
+  },
+  "not_claimed": [
+    "causation",
+    "guaranteed per-client benefit",
+    "forward-in-time performance"
+  ]
+}
