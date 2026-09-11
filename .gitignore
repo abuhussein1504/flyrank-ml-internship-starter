@@ -20,12 +20,12 @@ data/processed/
 outputs/*.pdf
 outputs/model_results.json
 outputs/summary.json
-outputs/*.csv
+# outputs/*.csv
 !outputs/refresh_queue_sample.csv
 
 # --- Intern work area ------------------------------------------------------
 # your experiments live in work/; datasets never enter git
-work/**/*.csv
+# work/**/*.csv
 
 # --- Python / notebooks ----------------------------------------------------
 __pycache__/
