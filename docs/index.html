@@ -348,7 +348,7 @@
       <tr><td>Random Forest (client-grouped)</td><td class="num">0.520</td></tr>
     </table>
     <figure>
-      <img src="w07_precision_at_k.png" alt="Bar chart: Precision at 50 for base rate (0.56), Week-4 rule (0.44), and Logistic Regression (0.74).">
+      <img src="assets/w07_precision_at_k.png" alt="Bar chart: Precision at 50 for base rate (0.56), Week-4 rule (0.44), and Logistic Regression (0.74).">
       <figcaption>Ranking quality at the review budget (K=50), reproduced in the action-playbook notebook. The rule scores <em>below</em> the base rate — it ranks by raw visibility, not by anything decline-shaped. Random Forest lands close to the base rate too: added complexity did not buy more precision on this feature set, which is itself a finding.</figcaption>
     </figure>
     <p>
@@ -363,7 +363,7 @@
       Averaged, standardized Logistic Regression coefficients across folds put <code>clicks_last_30d</code> as by far the strongest signal pushing toward "declining" (a recent drop), with <code>sessions_90d</code> and <code>clicks_prev_30d</code> the strongest signals pushing the other way (a healthy longer-run baseline) — a <em>recent dip against a longer baseline</em>, not any single raw count. Of the top 50 ranked pages, 14 are false positives against <code>trend_direction</code>, and 12 of those 14 are pages already labeled "stable" rather than "up" — the model is catching a real short-term click drop on pages whose longer trend hasn't (yet) crossed the export's own boundary into "down." Given the cost model from the Introduction, that is the cheaper kind of mistake: a wasted look, not a missed decline.
     </p>
     <figure>
-      <img src="w07_action_mix.png" alt="Horizontal bar chart of the action mix across the eligible population: monitor 16,291; investigate_quiet_risk 3,989; refresh_review_routine 3,740; refresh_priority_review 2,761; monitor_not_owned 1,366; monitor_too_new 478; verify_before_action 170.">
+      <img src="assets/w07_action_mix.png" alt="Horizontal bar chart of the action mix across the eligible population: monitor 16,291; investigate_quiet_risk 3,989; refresh_review_routine 3,740; refresh_priority_review 2,761; monitor_not_owned 1,366; monitor_too_new 478; verify_before_action 170.">
       <figcaption>Applying the rule, the model, and a set of no-go checks together across all 28,795 eligible pages (Section 6 explains each action).</figcaption>
     </figure>
   </section>
