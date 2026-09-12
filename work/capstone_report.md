@@ -10,9 +10,11 @@
 
 ## 0. Abstract
 
-Content teams manage far more pages than they can manually review each cycle, so the question
-this paper answers is: which pages should a human look at first? Working from FlyRank's
-anonymized starter export — 30,000 pseudonymized pages across 32 clients, restricted to the
+FlyRank researches, writes, and publishes content into client websites at scale, then watches
+search performance over time — and content that ranks well quietly decays: rankings slip,
+clicks drop, and teams often notice too late. With thousands of live pages and far more of them
+than any team can manually re-check each cycle, the question this paper answers is: which pages
+should a human look at first? Working from FlyRank's anonymized starter export — 30,000 pseudonymized pages across 32 clients, restricted to the
 28,795 pages with real ranking signal — a transparent staleness-and-visibility rule is compared
 against a client-grouped, leakage-checked Logistic Regression predicting an *observed* decline
 outcome, evaluated at Precision@50 to match a realistic 50-page review budget. The learned model
@@ -27,8 +29,11 @@ from the smaller starter export.
 
 ## 1. Problem framing
 
-**Unit of analysis:** one pseudonymized content page, as it appears in a trailing-90-day
-snapshot. **Output:** a priority score and a reason-coded suggested action. **Who acts on it:** a
+This is FlyRank's own case study: FlyRank runs content as infrastructure — research, writing,
+and publishing into a client's site, then ongoing search-performance monitoring — across a
+portfolio far larger than any team can manually re-check every month, and content that ranks
+well quietly decays if nobody is watching. **Unit of analysis:** one pseudonymized content page,
+as it appears in a trailing-90-day snapshot. **Output:** a priority score and a reason-coded suggested action. **Who acts on it:** a
 FlyRank content strategist / editor with a fixed monthly review budget (K = 50 pages, chosen in
 `w02_ml_task_framing.ipynb` before any model was trained). **Cost of a wrong call:** a false
 positive (flagging a healthy page) wastes ~10–15 minutes of review time; a false negative
